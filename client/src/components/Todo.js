@@ -13,7 +13,7 @@ function App() {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.token.value);
   
-
+ // Update and Add todo function
   const addUpdateTodo = async () => {
     if (isUpdating === "") {
       try {
@@ -38,7 +38,8 @@ function App() {
       }
     }
   };
-
+ 
+  
   const deleteTodo = async (_id) => {
     try {
       const res = await axios.delete(`https://todo-dm.herokuapp.com/todo/${_id}`,{ headers: { authorization: token }});
